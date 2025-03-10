@@ -1,0 +1,63 @@
+Write a program that determines the change to be dispensed from a vending machine. An item in the machine can cost between 25 cents and a dollar, in 5-cent Increments (25,30,35) and the machine accepts only a single dollar bill to pay for the item. 
+
+
+
+code:: 
+
+
+package labexam;
+
+import java.util.*;
+public class LABEXAM {
+
+    public static void main(String[] args) {
+      
+Scanner fetch =new Scanner(System.in);
+int money, quarters, dimes, nicks, penny,change;
+
+System.out.println("Enter price of item ");
+ money= fetch.nextInt();
+ 
+ change = 100 - money;
+ 
+ System.out.println("Change: "+ change +" cents ");
+ 
+ quarters=change/25;
+ 
+ 
+ change=change%25;
+ 
+ dimes=change/10;
+ 
+ 
+ change=change%10;
+ 
+ nicks=change/5;
+ 
+ 
+ change=change%5;
+ 
+ penny=change;
+ 
+ System.out.println("Quarters:"+quarters);
+ System.out.println("Dimes: " + dimes);
+ System.out.println("Nickles: " + nicks);
+    }
+}
+
+    
+
+Reguya_LAB_ACTIVITY.java
+Zoomed into item.
+Synchronous Activity 2
+Daniel Ryan Quino
+•
+16 Nov
+10/10
+10 points out of a possible 10
+
+2022-11-16_13-01-12.png
+Image
+Class comments
+
+coded by: jovan reguya

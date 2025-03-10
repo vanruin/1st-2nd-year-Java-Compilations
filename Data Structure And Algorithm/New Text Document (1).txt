@@ -1,0 +1,67 @@
+package firstlabactivity;
+
+import java.util.Scanner;
+public class FirstLabActivity {
+
+  
+    public static void main(String[] args) {
+       
+Scanner scan = new Scanner(System.in);
+
+int priceOfItem = 0;
+
+int percentageOfTheMrkedupPrice = 0;
+
+int salesTaxRate = 0;
+
+double sellingPrice = 0;
+
+double finalPrice = 0;
+
+System.out.println("OrginalPrice: ");
+
+priceOfItem = scan.nextInt();
+
+System.out.println("marked-up price: ");
+
+percentageOfTheMrkedupPrice = scan.nextInt();
+
+System.out.println("sales tax rate: ");
+
+salesTaxRate = scan.nextInt();
+
+System.out.println("Original price: " + priceOfItem);
+
+System.out.println("marked-up price: " + percentageOfTheMrkedupPrice + "%");
+
+sellingPrice = priceOfItem + ((priceOfItem * percentageOfTheMrkedupPrice) / 100);
+
+System.out.println("Sale Price: " + sellingPrice);
+
+System.out.println("Sales Price tax: " + salesTaxRate + "%");
+
+finalPrice = sellingPrice - ((sellingPrice * salesTaxRate) / 100);
+
+System.out.println("Final price: " + finalPrice);
+
+
+}
+
+
+
+}
+
+       
+      
+    
+    
+
+FirstLabActivity.java
+Displaying FirstLabActivity.java.
+Synchronous Activity 1
+Daniel Ryan Quino
+•
+9 Nov
+10 points
+Due 9 Nov, 15:30
+Class comments
