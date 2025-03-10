@@ -1,0 +1,99 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of employees: ");
+        int numOfEmployees = input.nextInt();
+        int[][] hours = new int[numOfEmployees][7];
+
+        // Input the weekly hours for each employee
+        for (int i = 0; i < numOfEmployees; i++) {
+            System.out.print("Enter the weekly hours for employee " + (i + 1) + ": ");
+            for (int j = 0; j < 7; j++) {
+                hours[i][j] = input.nextInt();
+            }
+        }
+
+        // Sort the employees based on their total hours in decreasing order
+        for (int i = 0; i < numOfEmployees - 1; i++) {
+            for (int j = i + 1; j < numOfEmployees; j++) {
+                int sum1 = 0, sum2 = 0;
+                for (int k = 0; k < 7; k++) {
+                    sum1 += hours[i][k];
+                    sum2 += hours[j][k];
+                }
+                if (sum2 > sum1) {
+                    int[] temp = hours[i];
+                    hours[i] = hours[j];
+                    hours[j] = temp;
+                }
+            }
+        }
+
+        // Display the employees and their total hours
+        System.out.println("Employee\tTotal Hours");
+        for (int i = 0; i < numOfEmployees; i++) {
+            int sum = 0;
+            for (int j = 0; j < 7; j++) {
+                sum += hours[i][j];
+            }
+            System.out.println((i + 1) + "\t\t" + sum);
+        }
+    }
+}
+
+
+
+//Number 2 
+
+
+
+
+
+
+
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[][] rolls = new int[1000][2];
+        int[] sums = new int[13];
+
+        // Roll the dice 1000 times
+        for (int i = 0; i < 1000; i++) {
+            rolls[i][0] = random.nextInt(6) + 1;
+            rolls[i][1] = random.nextInt(6) + 1;
+        }
+
+        // Count the number of times each sum is rolled
+        for (int i = 0; i < 1000; i++) {
+            int sum = rolls[i][0] + rolls[i][1];
+            sums[sum]++;
+        }
+
+        // Display the pairs of numbers rolled by the dice
+        System.out.println("Pairs of numbers rolled by the dice:");
+        for (int i = 0; i < 1000; i++) {
+            System.out.println(rolls[i][0] + " " + rolls[i][1]);
+        }
+
+        // Display the number of times each sum is rolled
+        System.out.println("\nNumber of times each sum is rolled:");
+        for (int i = 2; i <= 12; i++) {
+            System.out.println(i + ": " + sums[i]);
+        }
+
+        // Display the sum that is rolled the maximum number of times
+        int maxCount = 0;
+        int maxSum = 0;
+        for (int i = 2; i <= 12; i++) {
+            if (sums[i] > maxCount) {
+                maxCount = sums[i];
+                maxSum = i;
+            }
+        }
+        System.out.println("\nThe sum that is rolled the maximum number of times is: " + maxSum);
+    }
+}
